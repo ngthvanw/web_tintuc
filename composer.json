@@ -1,0 +1,20 @@
+{
+    "name": "tiennguye/assignment2",
+    "description": "Website tin tuc su dung MVC PHP",
+    "authors": [
+        {
+            "name": "Tien Nguyen",
+            "email": "tiennvph05036@fpt.edu.vn"
+        }
+    ],
+    "require": {},
+    "autoload": {
+    	"psr-4": {
+    		"controllers\\": "controllers/",
+    		"models\\": "models/"
+    	},
+        "files": [
+            "commons/utils.php"
+        ]
+    }
+}

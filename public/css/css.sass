@@ -1,0 +1,462 @@
+@mixin font-face($path, $name)
+	font-family: $name
+	src: url($path)
+@font-face 
+	@include font-face('../fonts/Lato/Lato-Regular.ttf', Lato)
+@font-face 
+	@include font-face('../fonts/Lato/Lato-Bold.ttf', Lato-Bold)
+@font-face 
+	@include font-face('../fonts/Lato/Lato-Black.ttf', Lato-Black)
+@font-face 
+	@include font-face('../fonts/Roboto-Regular.ttf', Roboto)
+@font-face 
+	@include font-face('../fonts/RobotoSlab-Bold.ttf', RobotoSlab-Bold)
+$main-color: #d13030
+*
+	box-sizing: border-box
+body
+	font-family: Cabin
+	background: #FFF
+::selection
+	background: $main-color
+	color: #FFF
+img
+	max-width: 100%
+a 
+	color: #000
+a:hover
+	text-decoration: none
+	color: $main-color
+	transition: all .2s
+.container
+	padding-left: 30px
+	padding-right: 30px
+.clear
+	clear: both
+.header__fixed
+	line-height: 40px !important
+	top: 0
+	transition: all .2s
+	border-top: 5px solid $main-color
+	z-index: 999
+	img
+		height: 25px
+	.sub-menu
+		visibility: hidden !important
+header
+	.header
+		height: 80px
+		line-height: 80px
+		z-index: 999
+		background: #FFF
+		transition: all .2s
+		box-shadow: 0px 2px 5px #999
+	ul
+		margin: 0
+		padding: 0
+	ul.menu
+		list-style-type: none
+		float: right
+		text-transform: uppercase
+		li
+			display: inline-block
+			padding: 0 20px
+			position: relative
+			a
+				color: #000
+				font-weight: bold
+				display: block
+			a:hover
+				color: $main-color
+			&:hover
+				ul.sub-menu
+					display: block
+					margin-top: -10px
+					visibility: visible
+			ul.sub-menu
+				position: absolute
+				background: #FFF
+				border-top: 3px solid $main-color
+				width: 300px
+				text-align: center
+				z-index: 999
+				transition: margin-top 0.3s
+				visibility: hidden
+				left: -100%
+				box-shadow: 0 0 5px #a9a9a9
+				li
+					display: block
+					height: 40px
+					line-height: 40px
+					width: 100%
+					height: auto
+					border-bottom: 1px solid #dedede
+					transition: none
+					a
+						transition: none
+		li.search
+			padding: 0 !important
+	img
+		height: 48px
+	.top-header
+		height: 40px
+		line-height: 40px
+		background: #000
+		.col-lg-3
+			text-align: right
+		a
+			color: #FFF
+			&:hover
+				color: $main-color
+			i
+				padding-left: 10px
+		ul.top-menu
+			list-style-type: none
+			li
+				display: inline-block
+				padding: 0 15px
+				a 
+					color: #FFF
+				a:hover
+					color: $main-color
+			li:first-child
+				padding-left: 0
+
+.slider
+	.item
+		overflow: hidden
+		max-height: 543px
+		img
+			width: 100%
+			transform: translateY(-200px)
+.article
+	h4
+		font-size: 17px
+		font-weight: 600
+	text-transform: uppercase
+	@mixin description
+		z-index: 99
+		position: absolute
+		color: #FFF
+		background: -webkit-linear-gradient(top, rgba(255,0,0,0), #000)
+	h3
+		margin-top: 0
+	span.catename
+		font-size: 11px
+		background: $main-color
+		color: #FFF
+		border-radius: 3px
+		padding: 2px 5px
+		margin-right: 10px
+		font-weight: bold
+		&:hover
+			background: #000
+	span.posttime
+		font-size: 12px
+		font-family: 'Roboto', sans-serif
+		font-weight: bold
+	span.readmore
+		padding: 5px 
+		font-size: 13px
+		color: #333
+		border: 1px solid #333
+		border-radius: 3px
+		&:hover
+			background: $main-color
+			border-color: $main-color
+			a
+				color: #FFF
+	.paging
+		margin-bottom: 50px
+		width: 50%
+		margin: auto
+		color: $main-color
+		a
+			padding: 10px
+			border: 1px solid $main-color
+			border-radius: 3px
+			margin-right: 10px
+			color: $main-color
+			&:hover
+				background: $main-color
+				color: #FFF
+	h2.article__title
+		background-image: url('../images/title_bg.png')
+		background-repeat: repeat-x
+		background-position: center center
+		font-size: 45px
+		text-align: center
+		margin: 50px 0
+		font-family: RobotoSlab-Bold
+		span
+			background: #FFF
+			padding: 0 40px
+			color: #000
+			i
+				font-style: normal
+				color: $main-color
+	.sport
+		.sport__video
+			overflow: hidden
+			height: 410px
+			position: relative
+			padding: 0 !important
+			&:hover 
+				overflow: hidden
+				img
+					transform: scale(1.03)
+					transition: all .2s
+			img 
+				width: 100%
+				height: 410px
+			.sport__video__description
+				@include description
+				padding-bottom: 20px
+				padding-left: 20px
+				left: 0
+				bottom: 0
+				width: 100%
+				span
+					color: #FFF
+				h3
+					font-family: Lato-Bold
+					font-size: 30px
+					color: #FFF
+		.sport__boxlist
+			padding-left: 30px !important
+			padding-right: 0 !important
+			.sport__listnews
+				border-bottom: 1px solid #dedede
+				padding: 20px 0 20px 0
+				&:nth-child(1)
+					padding-top: 10px
+				&:nth-child(3)
+					border: none
+				.col-xs-8
+					padding-right: 30px !important
+					font-weight: 600
+					font-family: Lato-Bold
+					a
+						color: rgba(0, 0, 0, 0.68)
+						&:hover
+							color: $main-color
+				.col-xs-4
+					padding-right: 0 !important
+	.tech
+		.tech__listnews
+			margin-bottom: 30px
+			&:nth-child(3)
+				margin-right: 0 !important
+			&:hover 
+				overflow: hidden
+				img
+					transform: scale(1.03)
+					transition: all .2s
+			img 
+				width: 100%
+				height: 250px
+			.tech__listnews__box
+				width: 100%
+				overflow: hidden
+				height: 250px
+				position: relative
+				.tech__description
+					@include description
+					bottom: 0px
+					padding-left: 20px
+					padding-right: -15px
+					span
+						color: #FFF
+					h3
+						font-family: Lato-Bold
+						font-size: 20px
+						color: #FFF
+	.fashion_and_travel
+		.travel
+			h2.article__title
+				margin: 20px 0 !important
+			.travel__news
+				padding-bottom: 30px
+				padding-top: 30px
+				border-bottom: 1px solid #dedede
+				.col-xs-4
+					padding-left: 0 !important
+				.col-xs-8
+					padding-right: 0 !important
+				p
+					text-transform: none
+				&:nth-child(1)
+					padding-top: 0 !important
+	aside
+		border: 1px solid #dedede
+		border-radius: 5px
+		h2
+				margin: 40px 0 20px 0
+				text-align: center
+				font-family: Lato-Bold
+				font-weight: 600
+				border-top: 5px solid #000
+				border-bottom: 1px solid #dedede
+				padding: 10px 0
+		.fahsion
+			img
+				max-height: 96px
+			
+			h4
+				font-weight: 600
+				font-size: 14px
+		.newnews
+			.newnews__boxlist
+				.newnews__listnews
+					border-bottom: 1px solid #dedede
+					padding: 20px 0 20px 0
+					&:nth-child(1)
+						padding-top: 10px
+					&:nth-child(3)
+						border: none
+					.col-xs-8
+						font-weight: 600
+						h4
+							font-size: 14px
+					.col-xs-4
+						img
+							height: 65px
+footer
+	background: #272f32
+	border-top: 3px solid #d13030
+	color: #FFF
+	font-size: 14px
+	margin-top: 30px
+	a
+		color: #FFF
+	h2
+		font-size: 18px
+		font-family: RobotoSlab-Bold
+		text-transform: none
+	.footer__box__categories
+		.footer__category
+			padding-bottom: 30px
+		a
+			font-size: 16px
+		i
+			font-size: 11px
+			padding-right: 10px
+		.footer__category--left
+			float: left
+			width: 80%
+		span
+			float: right
+			width: 15%
+			font-size: 14px
+			color: #ccc
+	.footer__box
+		i
+			font-size: 40px 
+		.footer__box__lastest
+			border-bottom: 1px solid #dedede
+			padding: 10px 0
+			&:nth-child(4)
+				border-bottom: none
+			a
+				font-weight: bold
+			i
+				font-size: 14px
+			.posttime
+				font-size: 12px
+	input
+		height: 40px
+		line-height: 40px
+		border-radius: 3px
+		border: none
+		padding-left: 5px
+		width: 80%
+		color: $main-color
+	button
+		height: 40px
+		border-radius: 3px
+		line-height: 40px
+		background: #FFF
+		color: #d13030
+		border: 1px solid $main-color
+		max-width: 20%
+		width: 18%
+		transition: none
+		&:hover
+			background: $main-color
+			color: #FFF
+	.footer__bottom 
+		border-top: 1px solid #dedede
+		height: 40px
+		line-height: 40px
+		font-weight: bold
+		background: $main-color
+		a
+			padding-right: 15px
+			&:hover 
+				color: #fff !important
+				text-decoration: underline
+		.footer__bottom__right
+			text-align: right
+			color: #FFF
+.detail
+	margin-top: 50px
+	.detail__post
+
+		h1
+			font-weight: 600
+			color: #000
+			margin-top: 0
+			font-size: 32px
+		.detail__desc
+			height: 40px
+			line-height: 40px
+			border-top: 1px solid #dedede
+			border-bottom: 1px solid #dedede
+			color: #7d7d7d
+			margin-bottom: 40px
+			font-size: 12px
+			.posttime
+				padding-left: 10px
+		.paragraph__content
+			text-transform: none
+			line-height: 25px
+			font-size: 15px
+			text-align: justify
+			padding-bottom: 30px
+			border-bottom: 3px solid #000
+
+		i
+			padding-left: 10px
+	.comments
+		padding-bottom: 30px
+		border-top: 3px solid #000
+		h2
+			padding-bottom: 15px
+.category
+	aside
+		margin-top: 30px
+	.category__box
+		padding: 0 15px 0 0 !important
+		.category__news
+			margin-bottom: 40px
+			.category__news__title
+				position: absolute
+				bottom: 0
+				background: #FFF
+				padding: 10px 20px 10px 0
+				text-transform: none
+				h4
+					font-size: 25px
+
+			.category__news__thumb
+				height: 315px
+				overflow: hidden
+				position: relative
+			.category__news__desc
+				text-transform: none
+				margin: 20px 0
+
+a.slidelink
+	color: #FFF !important
+	&:hover
+		color: $main-color !important
